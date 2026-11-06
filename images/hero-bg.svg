@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="260" fill="#e6e9ef" font-family="monospace" font-size="30">
+  <text x="10" y="45">&lt;html&gt;</text>
+  <text x="210" y="45">&lt;?php ?&gt;</text>
+  <text x="10" y="125">WordPress</text>
+  <text x="10" y="205">{ css }</text>
+  <text x="200" y="205">&lt;/div&gt;</text>
+  <!-- house icon -->
+  <path d="M250 125 L285 95 L320 125 V160 H250 Z M275 160 V138 H295 V160" fill="none" stroke="#e6e9ef" stroke-width="4"/>
+  <!-- building icon -->
+  <path d="M345 160 V85 H385 V160 M355 100 H362 M368 100 H375 M355 118 H362 M368 118 H375 M355 136 H362 M368 136 H375" fill="none" stroke="#e6e9ef" stroke-width="4"/>
+</svg>

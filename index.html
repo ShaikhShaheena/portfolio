@@ -1,188 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaheena | Web Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaikh Shaheena | Frontend Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --dark: #1e2533; --blue: #1e3a8a; --light: #f5f7fa; --text: #555; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.7; }
+  h1, h2, h3, .logo { font-family: 'Poppins', sans-serif; color: #111; }
+  section { padding: 90px 8%; }
+  h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
 
+  /* Navbar */
+  nav { position: fixed; top: 0; width: 100%; background: var(--dark); display: flex;
+        justify-content: space-between; align-items: center; padding: 18px 8%; z-index: 10; }
+  .logo { color: #fff; font-size: 1.5rem; font-weight: 700; }
+  nav a { color: #fff; text-decoration: none; margin-left: 30px; font-weight: 500; }
+
+  /* Hero */
+  #home { min-height: 100vh; display: flex; align-items: center; gap: 60px; background: url("images/hero-bg.svg"); }
+  #home img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; object-position: top; flex-shrink: 0;
+              border: 8px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+  #home h1 { font-size: 3.2rem; color: var(--blue); line-height: 1.2; }
+  #home h3 { font-weight: 600; margin: 10px 0; }
+  .btn { display: inline-block; margin-top: 20px; padding: 12px 28px; background: var(--blue);
+         color: #fff; border: none; border-radius: 6px; text-decoration: none; font-weight: 600; cursor: pointer; }
+
+  /* About */
+  #about { background: var(--light); }
+  .about-box { display: flex; gap: 50px; align-items: center; }
+  .about-box p { margin-bottom: 15px; }
+  .about-box > div:first-child { flex: 1; }
+  .stats { display: grid; gap: 20px; }
+  .stat { background: #fff; padding: 25px 35px; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,.06); }
+  .stat h3 { color: var(--blue); font-size: 1.6rem; }
+
+  /* Projects & Skills cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+  .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,.08); }
+  .card img { width: 100%; height: 190px; object-fit: cover; object-position: top; background: #ddd; }
+  .card div { padding: 22px; }
+  .card a { color: var(--blue); font-weight: 600; text-decoration: none; }
+  #skills { background: var(--light); }
+  .skill { padding: 28px; border-left: 4px solid var(--blue); text-align: center; }
+  .skill span { display: inline-block; background: #eef1f6; padding: 6px 14px; border-radius: 20px; margin: 5px; font-size: .9rem; }
+
+  /* Contact */
+  #contact { background: linear-gradient(135deg, #f1f3f6, #2d3442); }
+  .contact-box { display: flex; gap: 50px; }
+  .contact-box > div, .contact-box form { flex: 1; }
+  .contact-box b { color: var(--blue); }
+  .social a { display: inline-block; background: #fff; color: #111; padding: 10px 22px; border-radius: 6px; margin: 10px 10px 0 0; text-decoration: none; }
+  form { background: #fff; padding: 35px; border-radius: 12px; }
+  form input, form textarea { width: 100%; padding: 12px; margin: 6px 0 18px; border: 1px solid #ddd; border-radius: 6px; font: inherit; }
+  form textarea { height: 120px; }
+
+  /* Scroll fade-in */
+  .reveal { opacity: 0; transform: translateY(40px); transition: .8s; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav a { margin-left: 12px; font-size: .85rem; }
+    #home, .about-box, .contact-box { flex-direction: column; text-align: center; }
+    #home { padding-top: 120px; }
+    #home h1 { font-size: 2.4rem; }
+  }
+</style>
+</head>
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo"><span>Portfolio</span></div>
-            <nav class="nav-links">
-                <a href="#hero">Home</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#contact" class="btn-nav">Contact</a>
-            </nav>
-        </div>
-    </header>
+<nav>
+  <span class="logo">Shaikh Shaheena</span>
+  <div><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <p class="badge">Frontend Developer</p>
-                <h1>Hi, I'm <span>Shaheena</span>.<br> I build clean & modern web pages.</h1>
-                <p class="hero-subtitle">
-                    I am learning HTML & CSS and I enjoy creating simple, responsive websites
-                    with a focus on clean layouts and user-friendly design.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn primary">View My Work</a>
-                    <a href="#contact" class="btn ghost">Hire Me</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/coding.jpg"
-                    alt="Developer at work">
-            </div>
-        </div>
-    </section>
+<section id="home">
+  <img src="images/profile.jpg" alt="Shaikh Shaheena">
+  <div>
+    <h1>Hello, I'm<br>Shaheena</h1>
+    <h3>Frontend Developer | UAE</h3>
+    <p>Building responsive, user-centered websites and e-commerce experiences with clean, modern design.</p>
+    <a href="#contact" class="btn">GET IN TOUCH</a>
+  </div>
+</section>
 
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <p class="section-subtitle">Technologies I'm currently learning and using.</p>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>HTML5</h3>
-                    <p>Building clean and structured layouts for the web.</p>
-                </div>
-                <div class="card">
-                    <h3>CSS3</h3>
-                    <p>Designing modern UI using Flexbox, Grid & animations.</p>
-                </div>
-                <div class="card">
-                    <h3>Figma</h3>
-                    <p>Creating UI/UX designs, components & prototypes.</p>
-                </div>
-                <div class="card">
-                    <h3>Shopify</h3>
-                    <p>Customizing e-commerce store themes & product pages.</p>
-                </div>
-                <div class="card">
-                    <h3>Photoshop</h3>
-                    <p>Editing and enhancing product & UI images professionally.</p>
-                </div>
-                <div class="card">
-                    <h3>Canva</h3>
-                    <p>Designing social media graphics & brand visuals.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <div class="about-box">
+    <div>
+      <p>I'm a Frontend Developer with hands-on experience building responsive, user-centered web and e-commerce interfaces using HTML5, CSS3, Figma, Photoshop, Canva and Shopify. I'm also skilled in WordPress, Elementor and Hostinger.</p>
+      <p>I've delivered end-to-end projects across e-commerce, mobile app UI and real estate websites — turning design concepts into seamless, high-impact web experiences that match brand identity and business goals.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><h3>5+ Projects</h3><p>Delivered End-to-End</p></div>
+      <div class="stat"><h3>MSc &amp; BSc</h3><p>Computer Science</p></div>
+      <div class="stat"><h3>UAE Based</h3><p>Available for Projects</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Projects Section -->
-    <section class="section section-alt" id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Some sample projects showcasing my layout & design skills.</p>
+<section id="projects" class="reveal">
+  <h2>My Projects</h2>
+  <div class="grid">
+    <div class="card"><img src="images/property-finder.jpg" alt="Property Finder"><div>
+      <h3>Property Finder</h3><p>UAE property search app with filters, sorting, price slider, favourites, compare, grid/list/map views and dark mode.</p>
+      <a href="https://shaikhshaheena.github.io/property-finder/" target="_blank">Live →</a> &nbsp; <a href="https://github.com/ShaikhShaheena/property-finder" target="_blank">Code →</a></div></div>
+    <div class="card"><img src="images/weather-dashboard.jpg" alt="Weather Dashboard"><div>
+      <h3>Weather Dashboard</h3><p>Live weather by city search or location, with current conditions, humidity, wind and a 5-day forecast.</p>
+      <a href="https://shaikhshaheena.github.io/weather-dashboard/" target="_blank">Live →</a> &nbsp; <a href="https://github.com/ShaikhShaheena/weather-dashboard" target="_blank">Code →</a></div></div>
+    <div class="card"><img src="images/gym-website.jpg" alt="IronPulse Gym"><div>
+      <h3>IronPulse Gym</h3><p>Interactive gym website with programs, trainers, monthly/yearly pricing toggle, BMI calculator and class schedule.</p>
+      <a href="https://shaikhshaheena.github.io/gym-website/" target="_blank">Live →</a> &nbsp; <a href="https://github.com/ShaikhShaheena/gym-website" target="_blank">Code →</a></div></div>
+    <div class="card"><img src="images/goldenkey-properties.jpg" alt="GoldenKey Properties"><div>
+      <h3>GoldenKey Properties</h3><p>Abu Dhabi real estate website with property search, featured listings, company stats and contact section.</p>
+      <a href="https://shaikhshaheena.github.io/goldenkey-properties/" target="_blank">Live →</a> &nbsp; <a href="https://github.com/ShaikhShaheena/goldenkey-properties" target="_blank">Code →</a></div></div>
+    <div class="card"><img src="images/ams-canalresidence.jpg" alt="AMS Canal Residence"><div>
+      <h3>AMS Canal Residence</h3><p>Real estate management site with buy/rent property search by destination, type and bedrooms.</p>
+      <a href="https://shaikhshaheena.github.io/ams-canalresidence/" target="_blank">Live →</a> &nbsp; <a href="https://github.com/ShaikhShaheena/ams-canalresidence" target="_blank">Code →</a></div></div>
+  </div>
+</section>
 
-            <div class="projects-grid">
-                <article class="project-card">
-                    <img src="images/landing-page.webp"
-                        alt="Portfolio Website Preview">
-                    <div class="project-content">
-                        <h3>Portfolio Landing Page</h3>
-                        <p>A clean and modern one-page portfolio built with only HTML & CSS.</p>
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                    </div>
-                </article>
+<section id="skills" class="reveal">
+  <h2>Technical Skills</h2>
+  <div class="grid">
+    <div class="card skill"><h3>Web Development</h3><br>
+      <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>WordPress</span><span>Elementor</span><span>Shopify</span><span>SEO</span></div>
+    <div class="card skill"><h3>Design</h3><br>
+      <span>Figma</span><span>Adobe Photoshop</span><span>Canva</span></div>
+    <div class="card skill"><h3>Tools &amp; Platforms</h3><br>
+      <span>Hostinger</span><span>Git &amp; GitHub</span><span>VS Code</span><span>MS Office</span></div>
+  </div>
+</section>
 
-                <article class="project-card">
-                    <img src="images/business-page.webp"
-                        alt="Business Website Design">
-                    <div class="project-content">
-                        <h3>Simple Business Homepage</h3>
-                        <p>Responsive homepage for a small business with hero, services, and contact.</p>
-                        <span class="tag">Responsive</span>
-                        <span class="tag">Layout</span>
-                    </div>
-                </article>
+<section id="contact" class="reveal">
+  <h2>Get In Touch</h2>
+  <div class="contact-box">
+    <div>
+      <h3>Let's Connect</h3>
+      <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p><br>
+      <p><b>Email:</b> shaikhshaheena704@gmail.com</p>
+      <p><b>Phone / WhatsApp:</b> +971 52 594 0469</p>
+      <p><b>Location:</b> Abu Dhabi, UAE</p><br>
+      <h3>Follow Me</h3>
+      <div class="social">
+        <a href="https://github.com/ShaikhShaheena" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/shaheenashaikh" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xbggbbqw" method="POST">
+      <label>Name</label><input type="text" name="name" required>
+      <label>Email</label><input type="email" name="email" required>
+      <label>Subject</label><input type="text" name="subject">
+      <label>Message</label><textarea name="message" required></textarea>
+      <button class="btn" type="submit">SEND MESSAGE</button>
+    </form>
+  </div>
+</section>
 
-                <article class="project-card">
-                    <img src="images/grid-layout.webp"
-                        alt="Product Showcase UI">
-                    <div class="project-content">
-                        <h3>Product Showcase</h3>
-                        <p>A grid-based product section with hover effects and modern cards.</p>
-                        <span class="tag">Grid</span>
-                        <span class="tag">UI</span>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container about-grid">
-            <div class="about-text">
-                <h2 class="section-title">About Me</h2>
-                <p>
-                    My name is <strong>Shaheena</strong>, I am a passionate Front-End Developer who loves transforming
-                    ideas into visually appealing digital experiences. I have experience designing user interfaces in
-                    Figma, creating and customizing Shopify stores, and editing visuals with Photoshop and Canva.
-                </p>
-                <p>
-                    My goal is to continue improving my skills in web development and UI/UX design by working on real
-                    world projects with experienced developers.
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="images/shaheena.png"
-                    alt="Profile">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section section-alt" id="contact">
-        <div class="container contact-grid">
-            <div>
-                <h2 class="section-title">Contact Me</h2>
-                <p class="section-subtitle">
-                    I’d love the opportunity to work and learn in your team.
-                    Please feel free to reach out using the form.
-                </p>
-                <ul class="contact-details">
-                    <li><strong>Email:</strong> shaikhshaheena704@gmail.com</li>
-                    <li><strong>Location:</strong> Abu Dhabi, UAE</li>
-                </ul>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn primary full">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2025 Shaheena. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-                <a href="#">Portfolio</a>
-            </div>
-        </div>
-    </footer>
-
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+  });
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 </body>
-
 </html>
